@@ -17,7 +17,9 @@ hist(datos$Felicidad, main="Histograma de felicidad", xlab="Felicidad")
 
 #Graficos de cajas
 boxplot(datos$PIB, main="Grafico del PIB per cápita")
+boxplot(datos$Felicidad, main="Grafico de felicidad")
 boxplot(datos$Corrupcion, main="Grafico de corrupcion")
+boxplot(datos$Libertad, main="Grafico de Libertad")
 
 #Variables
 datos$Felicidad <- as.numeric(datos$Felicidad)  # Felicidad (X)
@@ -51,6 +53,7 @@ cor_matrix
 #Con ggpairs 
 ggcor <- ggpairs(datos[, c("Felicidad", "PIB")])
 ggcor
+
 
 # 3. Ajuste del modelo de regresión
 modelo <- lm(PIB ~ Felicidad, data = datos)
